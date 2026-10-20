@@ -110,15 +110,12 @@ Foi encontrada uma cadeia máxima com **7 disciplinas e 6 arestas consecutivas**
 
 Essa sequência evidencia uma cadeia longa de dependências sucessivas. A não conclusão de uma disciplina no início da cadeia pode impedir o avanço nas seguintes, mesmo que elas estejam previstas para níveis posteriores.
 
-O algoritmo apresenta **uma das maiores cadeias**, pois podem existir outras sequências com o mesmo comprimento.
 
 ### 6.4. Resposta à pergunta de pesquisa
 
 Os resultados indicam que **Programação Avançada** merece atenção pelo alto número de dependentes diretos, enquanto **Matemática Básica e Modelagem**, **Lógica de Programação**, **Linguagem de Programação** e **Cálculo I** se destacam pelo grande alcance total.
 
 Além disso, a cadeia máxima identificada mostra que existem sequências de disciplinas que dependem de aprovações sucessivas. Portanto, ao planejar as matrículas, é útil considerar não apenas o nível curricular de uma matéria, mas também **quantas outras disciplinas dependem dela e quantas etapas existem nas cadeias posteriores**.
-
-Isso representa uma orientação estrutural para o planejamento acadêmico, e não uma regra absoluta de prioridade para todos os estudantes.
 
 ## 7. Como instalar e executar
 
@@ -128,56 +125,73 @@ Isso representa uma orientação estrutural para o planejamento acadêmico, e n�
 - Bibliotecas Python: **pandas**, **networkx** e **matplotlib**;
 - Terminal ou editor como o VS Code.
 
-### Passo 1 — Baixar o projeto
+### Passo 1 — Baixar os arquivos do projeto
 
-No repositório do GitHub, clique em **Code → Download ZIP** e extraia o arquivo. Alternativamente, com Git instalado:
+Acesse os links abaixo e baixe os três arquivos necessários para executar o projeto:
 
-```bash
-git clone https://github.com/jrenatoo/Requisitos_Eng_Comp.git
-cd Requisitos_Eng_Comp
-```
+- [projeto_aed2.py](https://github.com/jrenatoo/Requisitos_Eng_Comp/blob/main/projeto_aed2.py) — Código Python responsável pela análise e geração dos gráficos.
+- [disciplinas_grade.csv](https://github.com/jrenatoo/Requisitos_Eng_Comp/blob/main/Arquivos%20CSV/disciplinas_grade.csv) — Dados das disciplinas da grade curricular.
+- [arestas_prerequisitos.csv](https://github.com/jrenatoo/Requisitos_Eng_Comp/blob/main/Arquivos%20CSV/arestas_prerequisitos.csv) — Relações de pré-requisitos entre as disciplinas.
+
+**Importante:** coloque os três arquivos na mesma pasta para que o código consiga localizar os dados corretamente.
 
 ### Passo 2 — Instalar as bibliotecas
 
-No terminal, execute:
+É necessário ter o Python instalado. O projeto utiliza as bibliotecas `pandas`, `networkx` e `matplotlib`.
+
+**Opção 1 — Instalação direta**
+
+Abra o terminal na pasta do projeto e execute:
 
 ```bash
 python3 -m pip install pandas networkx matplotlib
 ```
 
-**Observação para macOS:** se o Python instalado estiver configurado como ambiente gerenciado externamente e aparecer o erro `externally-managed-environment`, recomenda-se usar uma instalação independente do Python obtida no [site oficial](https://www.python.org/downloads/macos/) ou um ambiente virtual. Caso seja utilizado o Python gerenciado pelo Homebrew, a instalação com `--user --break-system-packages` é possível, mas pode causar conflitos e não é a opção mais segura.
+**Opção 2 — Utilizando um ambiente virtual (venv)**
 
-### Passo 3 — Colocar os CSVs na pasta do script
+Caso prefira instalar as bibliotecas em um ambiente isolado, execute os seguintes comandos no terminal:
 
-**Importante:** na versão atual, `projeto_aed2.py` procura `disciplinas_grade.csv` e `arestas_prerequisitos.csv` na **mesma pasta em que o script está localizado**. Por isso, copie os dois arquivos que estão em `Arquivos CSV/` para a pasta principal `Requisitos_Eng_Comp/`, ao lado de `projeto_aed2.py`.
+Criar o ambiente virtual:
 
-A estrutura para execução deve ficar assim:
-
-```text
-Requisitos_Eng_Comp/
-├── projeto_aed2.py
-├── disciplinas_grade.csv
-├── arestas_prerequisitos.csv
-├── Arquivos CSV/
-├── imagens/
-└── resultados CSV/
+```bash
+python3 -m venv .venv
 ```
 
-### Passo 4 — Executar
+Ativar o ambiente virtual:
 
-Dentro da pasta do projeto, execute:
+No macOS ou Linux:
+
+```bash
+source .venv/bin/activate
+```
+
+No Windows (PowerShell):
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+Instalar as bibliotecas:
+
+```bash
+python -m pip install pandas networkx matplotlib
+```
+
+### Passo 3 — Executar o projeto
+
+Com o terminal aberto na pasta que contém os três arquivos, execute:
 
 ```bash
 python3 projeto_aed2.py
 ```
 
-O programa exibirá no terminal a quantidade de nós e arestas, o ranking de impacto e a maior cadeia encontrada. Também criará uma pasta `resultados/` com os arquivos:
+Caso esteja utilizando o ambiente virtual, também pode executar:
 
-- `01_rede_completa.png`
-- `02_maior_cadeia.png`
-- `03_ranking_impacto.png`
-- `ranking_disciplinas.csv`
-- `maior_cadeia.csv`
+```bash
+python projeto_aed2.py
+```
+
+Após a execução, o programa realizará a análise da rede curricular e gerará os gráficos e arquivos de resultados.
 
 ## 8. Arquivos e resultados disponíveis
 
