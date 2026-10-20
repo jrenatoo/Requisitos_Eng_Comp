@@ -119,45 +119,76 @@ Além disso, a cadeia máxima identificada mostra que existem sequências de dis
 
 ## 7. Como instalar e executar
 
-### Requisitos
-
-- Python 3 instalado ([python.org](https://www.python.org/downloads/));
-- Bibliotecas Python: **pandas**, **networkx** e **matplotlib**;
-- Terminal ou editor como o VS Code.
+Para executar o projeto, é necessário ter o **Python 3** instalado, além das bibliotecas `pandas`, `networkx` e `matplotlib`.
 
 ### Passo 1 — Baixar os arquivos do projeto
 
-Acesse os links abaixo e baixe os três arquivos necessários para executar o projeto:
+Baixe os três arquivos disponíveis no repositório:
 
-- [projeto_aed2.py](https://github.com/jrenatoo/Requisitos_Eng_Comp/blob/main/projeto_aed2.py) — Código Python responsável pela análise e geração dos gráficos.
+- [projeto_aed2.py](https://github.com/jrenatoo/Requisitos_Eng_Comp/blob/main/projeto_aed2.py) — Código principal do projeto.
 - [disciplinas_grade.csv](https://github.com/jrenatoo/Requisitos_Eng_Comp/blob/main/Arquivos%20CSV/disciplinas_grade.csv) — Dados das disciplinas da grade curricular.
-- [arestas_prerequisitos.csv](https://github.com/jrenatoo/Requisitos_Eng_Comp/blob/main/Arquivos%20CSV/arestas_prerequisitos.csv) — Relações de pré-requisitos entre as disciplinas.
+- [arestas_prerequisitos.csv](https://github.com/jrenatoo/Requisitos_Eng_Comp/blob/main/Arquivos%20CSV/arestas_prerequisitos.csv) — Relações de pré-requisitos.
 
-**Importante:** coloque os três arquivos na mesma pasta para que o código consiga localizar os dados corretamente.
+Coloque os três arquivos na **mesma pasta**, para que o programa consiga acessar os dados corretamente.
 
-### Passo 2 — Instalar as bibliotecas
+### Passo 2 — Instalar o Python
 
-É necessário ter o Python instalado. O projeto utiliza as bibliotecas `pandas`, `networkx` e `matplotlib`.
+Primeiramente, verifique se o Python já está instalado. Abra o terminal e execute:
+
+```bash
+python3 --version
+```
+
+No Windows, também é possível utilizar:
+
+```bash
+py --version
+```
+
+Caso o Python não esteja instalado, utilize uma das opções abaixo, de acordo com o sistema operacional.
+
+**Windows (PowerShell):**
+
+```powershell
+winget install --id Python.Python.3.13 -e
+```
+
+**macOS (Homebrew):**
+
+```bash
+brew install python
+```
+
+**Ubuntu/Debian:**
+
+```bash
+sudo apt update
+sudo apt install python3 python3-pip python3-venv
+```
+
+Também é possível instalar o Python pelo [site oficial](https://www.python.org/downloads/).
+
+Após a instalação, abra um novo terminal e verifique se o Python está funcionando.
+
+### Passo 3 — Instalar as bibliotecas
+
+Abra o terminal na pasta do projeto e escolha uma das opções abaixo.
 
 **Opção 1 — Instalação direta**
-
-Abra o terminal na pasta do projeto e execute:
 
 ```bash
 python3 -m pip install pandas networkx matplotlib
 ```
 
-**Opção 2 — Utilizando um ambiente virtual (venv)**
+**Opção 2 — Utilizando ambiente virtual (venv)**
 
-Caso prefira instalar as bibliotecas em um ambiente isolado, execute os seguintes comandos no terminal:
-
-Criar o ambiente virtual:
+Crie o ambiente virtual:
 
 ```bash
 python3 -m venv .venv
 ```
 
-Ativar o ambiente virtual:
+Ative o ambiente virtual.
 
 No macOS ou Linux:
 
@@ -171,28 +202,45 @@ No Windows (PowerShell):
 .venv\Scripts\Activate.ps1
 ```
 
-Instalar as bibliotecas:
+Com o ambiente ativado, instale as bibliotecas:
 
 ```bash
 python -m pip install pandas networkx matplotlib
 ```
 
-### Passo 3 — Executar o projeto
+O ambiente virtual permite instalar as bibliotecas separadamente das demais instalações do Python no computador, evitando possíveis conflitos.
 
-Com o terminal aberto na pasta que contém os três arquivos, execute:
+**Observação:** no Windows, os comandos `python3` podem precisar ser substituídos por `py`. Em algumas instalações do Python, a instalação direta de bibliotecas pode ser bloqueada; nesse caso, utilize a opção com ambiente virtual.
+
+### Passo 4 — Executar o projeto
+
+Com os três arquivos na mesma pasta, abra o terminal nesse diretório e execute:
 
 ```bash
 python3 projeto_aed2.py
 ```
 
-Caso esteja utilizando o ambiente virtual, também pode executar:
+Caso esteja utilizando o ambiente virtual, execute:
 
 ```bash
 python projeto_aed2.py
 ```
 
-Após a execução, o programa realizará a análise da rede curricular e gerará os gráficos e arquivos de resultados.
+No Windows, sem ambiente virtual, também é possível utilizar:
 
+```powershell
+py projeto_aed2.py
+```
+
+Após a execução, o programa realizará a análise da rede de pré-requisitos e gerará os seguintes resultados:
+
+- **01_rede_completa.png:** visualização da rede curricular completa.
+- **02_maior_cadeia.png:** visualização da maior cadeia de pré-requisitos.
+- **03_ranking_impacto.png:** comparação das disciplinas com maior impacto direto e indireto.
+- **ranking_disciplinas.csv:** ranking das disciplinas conforme seus dependentes.
+- **maior_cadeia.csv:** sequência de disciplinas pertencentes à maior cadeia identificada.
+
+Os arquivos gerados serão armazenados na pasta `resultados`, criada automaticamente pelo programa.
 ## 8. Arquivos e resultados disponíveis
 
 **Dados de entrada:**
