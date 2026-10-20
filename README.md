@@ -31,9 +31,6 @@ A base utilizada na análise possui **50 disciplinas** e **87 relações de pré
 - [`disciplinas_grade.csv`](Arquivos%20CSV/disciplinas_grade.csv): código, nome, nível, carga horária e pré-requisitos de cada disciplina.
 - [`arestas_prerequisitos.csv`](Arquivos%20CSV/arestas_prerequisitos.csv): pares de disciplinas ligados por uma relação de pré-requisito.
 
-Os dados representam as relações registradas na estrutura curricular utilizada, transcritas manualmente para os arquivos CSV. Por isso, o projeto está limitado à versão da grade selecionada e está sujeito a eventuais erros de transcrição.
-
-## 3. Modelagem do grafo
 
 O problema foi representado por um **grafo dirigido e não ponderado**, construído com a biblioteca NetworkX.
 
