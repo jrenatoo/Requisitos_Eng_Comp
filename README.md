@@ -8,7 +8,7 @@
 - **José Renato de Araújo Ribeiro** — [GitHub](https://github.com/jrenatoo)
 - **Marcelo Jorge Oliveira de Albuquerque Melo** — [GitHub](https://github.com/marcelomelos)
 
-**Vídeo de apresentação no YouTube:** [INSERIR LINK DO VÍDEO]
+**Vídeo de apresentação no YouTube:** https://youtu.be/CHzCP6t4trY
 
 ## 1. Problema e pergunta de pesquisa
 
