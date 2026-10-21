@@ -42,6 +42,18 @@ Na visualização, **nós maiores indicam disciplinas com maior grau de saída**
 
 O grafo foi analisado como um **DAG (grafo dirigido acíclico)**, o que permite buscar a maior sequência de pré-requisitos sem ciclos.
 
+## 3. Modelagem do grafo
+
+O problema foi representado por um **grafo dirigido e não ponderado**, construído com a biblioteca NetworkX.
+
+- **Nós (vértices):** representam as disciplinas. Cada nó possui atributos como código, nome e nível curricular.
+- **Arestas dirigidas:** representam as relações de pré-requisito. Se a disciplina A é pré-requisito de B, a aresta é **A → B**.
+- **Pesos:** não foram atribuídos pesos às arestas, pois o objetivo é representar a existência e a direção de cada dependência.
+
+Na visualização, **nós maiores indicam disciplinas com maior grau de saída**, ou seja, mais dependentes diretos. Esse tamanho é somente um recurso visual e não representa um peso matemático no grafo.
+
+O grafo foi analisado como um **DAG (grafo dirigido acíclico)**, o que permite buscar a maior sequência de pré-requisitos sem ciclos.
+
 ## 4. Relação com os conteúdos da disciplina
 
 | Conteúdo | Semana | Onde aparece no código | Aplicação no projeto |
